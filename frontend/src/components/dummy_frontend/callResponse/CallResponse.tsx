@@ -18,7 +18,7 @@ function Heading({
       </h2>
       <hr className="h-px w-full bg-black border-none mt-0" />
       <p>
-        The {methodType} call was made to the C++ REST API hosted on "http://localhost:8080/api/data". The service responded with the response: {response}
+        The {methodType} call was made to the C++ REST API hosted on "http://localhost:8080/{endpoint}". The service responded with the response: {response}.
       </p>
     </>
   );
