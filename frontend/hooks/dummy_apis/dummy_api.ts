@@ -3,3 +3,45 @@ import React from 'react';
 
 
 
+function async getDummyCppResponse() {
+
+    const response = await fetch("http://localhost:8080/api/data");
+    const data = await response.json();
+    return data;
+}
+
+
+function async postDummyCppResponse() {
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'React POST Request Example' })
+    };
+    const response = await fetch('http://localhost:8080/api/data', requestOptions);
+    const data = await response.json();
+    return data;
+}
+
+
+
+function async putDummyCppResponse() {
+
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'React Hooks PUT Request Example' })
+    };
+    const response = await fetch('http://localhost:8080/api/data', requestOptions);
+    const data = await response.json();
+    return data;
+}
+
+
+
+function async deleteDummyCppResponse() {
+
+    const response = await fetch('http://localhost:8080/api/data', { method: 'DELETE' });
+    const data = await response.json();
+    return data;
+}
