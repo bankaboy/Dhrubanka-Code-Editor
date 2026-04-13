@@ -1,5 +1,5 @@
 import React from "react";
-import { DefaultInputs } from "@/helpers/constants";
+import { DefaultInputs } from "../../../types/dummy_frontend/dummy_constants";
 
 interface HeadingProps {
   headingText: string;
