@@ -25,5 +25,6 @@ dist-ssr
 
 ## Cpp backend ignores
 cmake_install.cmake
-CMakeFiles
+CMakeFiles/
 CMakeCache.txt
+build/
