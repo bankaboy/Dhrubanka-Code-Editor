@@ -2,7 +2,12 @@ import './App.css'
 
 import Heading from "../components/dummy_frontend/heading/Heading";
 import CallResponse from '../components/dummy_frontend/callResponse/CallResponse';
-import {getDummyCppResponse} from "../hooks/dummy_apis/dummy_api"
+import { 
+  getDummyCppResponse, 
+  postDummyCppResponse, 
+  putDummyCppResponse, 
+  deleteDummyCppResponse 
+} from "../hooks/dummy_apis/dummy_api"
 
 function App() {
 
@@ -18,14 +23,26 @@ function App() {
 
       <div>
         <Heading headingText="Response from C++ post call"/> 
+        <CallResponse 
+          methodType='POST'
+          onBackendCall={postDummyCppResponse}
+        />
       </div>
 
       <div>
         <Heading headingText="Response from C++ put call"/> 
+        <CallResponse 
+          methodType='PUT'
+          onBackendCall={putDummyCppResponse}
+        />
       </div>
 
       <div>
         <Heading headingText="Response from C++ delete call"/> 
+        <CallResponse 
+          methodType='DEL'
+          onBackendCall={deleteDummyCppResponse}
+        />
       </div>
     </>
   )

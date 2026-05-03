@@ -7,11 +7,12 @@ export async function getDummyCppResponse() {
 
     const response = await fetch("http://localhost:8080/api/data");
     const data = await response.json();
+    console.log(data)
     return data;
 }
 
 
-async function postDummyCppResponse() {
+export async function postDummyCppResponse() {
 
     const requestOptions = {
         method: 'POST',
@@ -20,12 +21,13 @@ async function postDummyCppResponse() {
     };
     const response = await fetch('http://localhost:8080/api/data', requestOptions);
     const data = await response.json();
+    console.log(data)
     return data;
 }
 
 
 
-async function putDummyCppResponse() {
+export async function putDummyCppResponse() {
 
     const requestOptions = {
         method: 'PUT',
@@ -34,14 +36,16 @@ async function putDummyCppResponse() {
     };
     const response = await fetch('http://localhost:8080/api/data', requestOptions);
     const data = await response.json();
+    console.log(data)
     return data;
 }
 
 
 
-async function deleteDummyCppResponse() {
+export async function deleteDummyCppResponse() {
 
     const response = await fetch('http://localhost:8080/api/data', { method: 'DELETE' });
     const data = await response.json();
+    console.log(data)
     return data;
 }
