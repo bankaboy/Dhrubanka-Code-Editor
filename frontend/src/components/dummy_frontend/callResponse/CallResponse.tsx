@@ -20,7 +20,7 @@ function CallResponse({
     const fetchData = async () => {
       try {
         const data = await onBackendCall();
-        setResponse(JSON.stringify(data));
+        setResponse(data.message);
       } catch (error) {
         setResponse("Error: " + error.message);
       }
