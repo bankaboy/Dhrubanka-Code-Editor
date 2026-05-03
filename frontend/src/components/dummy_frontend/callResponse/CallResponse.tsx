@@ -2,7 +2,7 @@
 
 interface CallResponseProps {
   methodType: string;
-  endpoint: string;
+  endpoint?: string;
   // response: string;
   onBackendCall: () => string;
 }

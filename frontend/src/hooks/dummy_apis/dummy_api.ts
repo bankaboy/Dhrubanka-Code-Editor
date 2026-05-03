@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-async function getDummyCppResponse() {
+export async function getDummyCppResponse() {
 
     const response = await fetch("http://localhost:8080/api/data");
     const data = await response.json();
