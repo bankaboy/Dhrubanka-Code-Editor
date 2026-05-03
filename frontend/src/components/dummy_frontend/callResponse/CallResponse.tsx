@@ -6,7 +6,7 @@ interface CallResponseProps {
   response: string;
 }
 
-function Heading({
+function CallResponse({
   methodType = "GET",
   endpoint = "/api/data",
   response = "Default response if nothing received from backend"
@@ -24,4 +24,4 @@ function Heading({
   );
 }
 
-export default Heading;
+export default CallResponse;
