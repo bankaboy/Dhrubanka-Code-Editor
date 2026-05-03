@@ -2,7 +2,7 @@ import './App.css'
 
 import Heading from "../components/dummy_frontend/heading/Heading";
 import CallResponse from '../components/dummy_frontend/callResponse/CallResponse';
-import {getDummyCppResponse} from "../hooks/dummy_api"
+import {getDummyCppResponse} from "../hooks/dummy_apis/dummy_api"
 
 function App() {
 
