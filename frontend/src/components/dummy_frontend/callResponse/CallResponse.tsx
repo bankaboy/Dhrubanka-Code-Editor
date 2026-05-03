@@ -1,4 +1,4 @@
-
+import { useState, useEffect } from 'react';
 
 interface CallResponseProps {
   methodType: string;
@@ -14,7 +14,19 @@ function CallResponse({
   onBackendCall
 }: CallResponseProps) {
 
-    const response = onBackendCall()
+  const [response, setResponse] = useState<string>("Loading...");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await onBackendCall();
+        setResponse(JSON.stringify(data));
+      } catch (error) {
+        setResponse("Error: " + error.message);
+      }
+    };
+    fetchData();
+  }, [onBackendCall]);
  
   return (
     <>
