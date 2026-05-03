@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-function async getDummyCppResponse() {
+async function getDummyCppResponse() {
 
     const response = await fetch("http://localhost:8080/api/data");
     const data = await response.json();
@@ -11,7 +11,7 @@ function async getDummyCppResponse() {
 }
 
 
-function async postDummyCppResponse() {
+async function postDummyCppResponse() {
 
     const requestOptions = {
         method: 'POST',
@@ -25,7 +25,7 @@ function async postDummyCppResponse() {
 
 
 
-function async putDummyCppResponse() {
+async function putDummyCppResponse() {
 
     const requestOptions = {
         method: 'PUT',
@@ -39,7 +39,7 @@ function async putDummyCppResponse() {
 
 
 
-function async deleteDummyCppResponse() {
+async function deleteDummyCppResponse() {
 
     const response = await fetch('http://localhost:8080/api/data', { method: 'DELETE' });
     const data = await response.json();
