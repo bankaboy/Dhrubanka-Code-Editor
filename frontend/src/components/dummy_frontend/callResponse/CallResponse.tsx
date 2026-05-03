@@ -14,6 +14,7 @@ function CallResponse({
   onBackendCall
 }: CallResponseProps) {
 
+    const response = onBackendCall()
  
   return (
     <>
