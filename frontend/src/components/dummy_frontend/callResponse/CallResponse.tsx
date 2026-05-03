@@ -3,14 +3,18 @@
 interface CallResponseProps {
   methodType: string;
   endpoint: string;
-  response: string;
+  // response: string;
+  onBackendCall: () => string;
 }
 
 function CallResponse({
   methodType = "GET",
   endpoint = "/api/data",
-  response = "Default response if nothing received from backend"
+  // response = "Default response if nothing received from backend"
+  onBackendCall
 }: CallResponseProps) {
+
+ 
   return (
     <>
       <h2 className="text-4xl font-bold leading-tight text-black sm:text-4xl mb-0">
