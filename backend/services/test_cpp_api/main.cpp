@@ -23,10 +23,16 @@ http::response<http::string_body> handle_request(http::request<http::string_body
         http::response<http::string_body> res{http::status::ok, req.version()};
         res.set(http::field::server, "Beast");
         res.set(http::field::content_type, "application/json");
+        res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+        res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        res.set("Access-Control-Allow-Headers", "Content-Type");
         res.keep_alive(req.keep_alive());
         res.body() = json_response.dump();
         res.prepare_payload();
         return res;
+
+        //curl http://localhost:8080/api/data  -H "Accept: application/json"
+
     }
 
     // Handle POST /api/data
@@ -40,6 +46,9 @@ http::response<http::string_body> handle_request(http::request<http::string_body
             http::response<http::string_body> res{http::status::ok, req.version()};
             res.set(http::field::server, "Beast");
             res.set(http::field::content_type, "application/json");
+            res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+            res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            res.set("Access-Control-Allow-Headers", "Content-Type");
             res.keep_alive(req.keep_alive());
             res.body() = json_response.dump();
             res.prepare_payload();
@@ -50,6 +59,9 @@ http::response<http::string_body> handle_request(http::request<http::string_body
             http::response<http::string_body> res{http::status::bad_request, req.version()};
             res.set(http::field::server, "Beast");
             res.set(http::field::content_type, "application/json");
+            res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+            res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            res.set("Access-Control-Allow-Headers", "Content-Type");
             res.keep_alive(req.keep_alive());
             res.body() = json_response.dump();
             res.prepare_payload();
@@ -68,6 +80,9 @@ http::response<http::string_body> handle_request(http::request<http::string_body
             http::response<http::string_body> res{http::status::ok, req.version()};
             res.set(http::field::server, "Beast");
             res.set(http::field::content_type, "application/json");
+            res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+            res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            res.set("Access-Control-Allow-Headers", "Content-Type");
             res.keep_alive(req.keep_alive());
             res.body() = json_response.dump();
             res.prepare_payload();
@@ -78,6 +93,9 @@ http::response<http::string_body> handle_request(http::request<http::string_body
             http::response<http::string_body> res{http::status::bad_request, req.version()};
             res.set(http::field::server, "Beast");
             res.set(http::field::content_type, "application/json");
+            res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+            res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            res.set("Access-Control-Allow-Headers", "Content-Type");
             res.keep_alive(req.keep_alive());
             res.body() = json_response.dump();
             res.prepare_payload();
@@ -92,8 +110,23 @@ http::response<http::string_body> handle_request(http::request<http::string_body
         http::response<http::string_body> res{http::status::ok, req.version()};
         res.set(http::field::server, "Beast");
         res.set(http::field::content_type, "application/json");
+        res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+        res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        res.set("Access-Control-Allow-Headers", "Content-Type");
         res.keep_alive(req.keep_alive());
         res.body() = json_response.dump();
+        res.prepare_payload();
+        return res;
+    }
+
+    // Handle OPTIONS for CORS preflight
+    if (req.method() == http::verb::options && req.target() == "/api/data") {
+        http::response<http::string_body> res{http::status::ok, req.version()};
+        res.set(http::field::server, "Beast");
+        res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+        res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        res.set("Access-Control-Allow-Headers", "Content-Type");
+        res.keep_alive(req.keep_alive());
         res.prepare_payload();
         return res;
     }
@@ -105,6 +138,9 @@ http::response<http::string_body> handle_request(http::request<http::string_body
         http::response<http::string_body> res{http::status::not_found, req.version()};
         res.set(http::field::server, "Beast");
         res.set(http::field::content_type, "application/json");
+        res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+        res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        res.set("Access-Control-Allow-Headers", "Content-Type");
         res.keep_alive(req.keep_alive());
         res.body() = json_response.dump();
         res.prepare_payload();
@@ -116,6 +152,9 @@ http::response<http::string_body> handle_request(http::request<http::string_body
     http::response<http::string_body> res{http::status::method_not_allowed, req.version()};
     res.set(http::field::server, "Beast");
     res.set(http::field::content_type, "application/json");
+    res.set("Access-Control-Allow-Origin", "http://localhost:5173");
+    res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.set("Access-Control-Allow-Headers", "Content-Type");
     res.keep_alive(req.keep_alive());
     res.body() = json_response.dump();
     res.prepare_payload();
