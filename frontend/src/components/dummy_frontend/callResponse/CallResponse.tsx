@@ -4,7 +4,7 @@ interface CallResponseProps {
   methodType: string;
   endpoint?: string;
   // response: string;
-  onBackendCall: () => Promise<any>;
+  onBackendCall?: () => Promise<any>;
 }
 
 function CallResponse({
